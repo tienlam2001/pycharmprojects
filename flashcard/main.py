@@ -6,11 +6,15 @@ import tkinter as tk
 
 window = tk.Tk() # Create mainframe
 window.title("Flashcard")
-window.config(width= 800, height= 800)
-canvas = tk.Canvas(width=700, height= 400, highlightthickness = 0)
+
+
+
+canvas = tk.Canvas(width=900, height= 900)
+cardback = tk.PhotoImage(file="./images/card_back.png")
 cardfront = tk.PhotoImage(file="./images/card_front.png")
-canvas.create_image(700,400,image=cardfront)
-canvas.grid(row = 0, column=0)
+canvas.create_image(450,300,image=cardfront,anchor="center")
+canvas.create_text(450,300,text="this is text")
+canvas.grid(row=0, column=0)
 
 window.mainloop()
 

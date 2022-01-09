@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/flashcard.iml" filepath="$PROJECT_DIR$/.idea/flashcard.iml" />
       <module fileurl="file://$PROJECT_DIR$/../password/.idea/password.iml" filepath="$PROJECT_DIR$/../password/.idea/password.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../poromodo/.idea/poromodo.iml" filepath="$PROJECT_DIR$/../poromodo/.idea/poromodo.iml" />
     </modules>
   </component>
 </project>

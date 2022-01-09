@@ -39,6 +39,7 @@ def generateButton():
 def addPass(website,username,password):
 
     if website.get() =="" or username.get() =="" or password.get() =="":
+        messagebox.showinfo(title="Error !", message="can't leave boxes empty")
         return None
 
     restoreWebsite = website.get()
@@ -76,7 +77,13 @@ def addPass(website,username,password):
 
 
 def searchPassword(website):
-    return 0
+    datajson = open('data.json', 'r')
+    data = json.load(datajson)
+    try:
+        print(data[website.get()])
+    except KeyError:
+        print("can't Find the account")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = tk.Tk()

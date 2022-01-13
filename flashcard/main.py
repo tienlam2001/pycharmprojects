@@ -29,8 +29,8 @@ randomN = randrange(0,len(to_learn))
 window.config(padx=100,width=1200, height=900,bg=BACKGROUND_COLOR)
 
 canvas = tk.Canvas(width=1000, height= 600, bg =BACKGROUND_COLOR,highlightthickness=0)
-cardback = tk.PhotoImage(file="./images/card_back.png")
-cardfront = tk.PhotoImage(file="./images/card_front.png")
+cardback = tk.PhotoImage(file="images/card_back.png")
+cardfront = tk.PhotoImage(file="images/card_front.png")
 image_canvas= canvas.create_image(500,300,image=cardfront,anchor="center")
 textLanguage = canvas.create_text(500,100,text="French", font=(FONT_NAME,30))
 text_canvas=canvas.create_text(500,300,text=to_learn[randomN]["French"], font=(FONT_NAME,50))
@@ -81,7 +81,7 @@ def nextQuestion():                     # When the user click right button
     canvas.itemconfig(image_canvas, image=cardfront)        # Set image to front
     canvas.itemconfig(text_canvas, text=to_learn[randomN]["French"])    # Set text to french
     runningTimer()
-
+from PIL import ImageTk, Image
 
 
 

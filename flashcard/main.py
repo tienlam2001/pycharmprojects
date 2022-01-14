@@ -29,7 +29,7 @@ randomN = randrange(0,len(to_learn))
 window.config(padx=100,width=1200, height=900,bg=BACKGROUND_COLOR)
 
 canvas = tk.Canvas(width=1000, height= 600, bg =BACKGROUND_COLOR,highlightthickness=0)
-cardback = tk.PhotoImage(file="images/card_back.png")
+cardbck = tk.PhotoImage(file="images/card_back.png")
 cardfront = tk.PhotoImage(file="images/card_front.png")
 image_canvas= canvas.create_image(500,300,image=cardfront,anchor="center")
 textLanguage = canvas.create_text(500,100,text="French", font=(FONT_NAME,30))

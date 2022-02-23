@@ -5,13 +5,28 @@
     <title>Add Book</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="{{url_for('home')}}" method="POST">
+        {% if value == "None"%}
         <label>Book Name</label>
-        <input type="text">
+        <input name = "title" type="text" ></input>
         <label>Book Author</label>
-        <input type="text">
+        <input name = "author" type="text"></input>
         <label>Rating</label>
-        <input type="text">
+        <input name = "rating" type="number"></input>
+
+        {% else %}
+
+        <label>Book Name</label>
+        <input name = "title" type="text" value="{{value}}" ></input>
+        <label>Book Author</label>
+        <input name = "author" type="text" value="{{valueAuthor}}"></input>
+        <label>Rating</label>
+        <input name = "rating" type="number" value="{{valueRating}}"></input>
+
+        {% endif %}
+
+
+
         <button type="submit">Add Book</button>
     </form>
 </body>

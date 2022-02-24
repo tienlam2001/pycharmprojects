@@ -7,7 +7,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="flashcard" />
-    <orderEntry type="module" module-name="beautifulsoup" />
-    <orderEntry type="module" module-name="password" />
+    <orderEntry type="module" module-name="emailsmpt" />
   </component>
 </module>

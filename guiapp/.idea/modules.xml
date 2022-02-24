@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../beautifulsoup/.idea/beautifulsoup.iml" filepath="$PROJECT_DIR$/../beautifulsoup/.idea/beautifulsoup.iml" />
       <module fileurl="file://$PROJECT_DIR$/../flashcard/.idea/flashcard.iml" filepath="$PROJECT_DIR$/../flashcard/.idea/flashcard.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/guiapp.iml" filepath="$PROJECT_DIR$/.idea/guiapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../password/.idea/password.iml" filepath="$PROJECT_DIR$/../password/.idea/password.iml" />
     </modules>
   </component>
 </project>

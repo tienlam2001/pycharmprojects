@@ -36,6 +36,10 @@ class Movie(db.Model):
     img_url = db.Column(db.String, unique=False, nullable=False)
 
 
+class EditForm(FlaskForm):
+    rating = StringField('Rating', validators=[DataRequired()])
+    review = StringField('Review', validators=[DataRequired()])
+
     def __init__(self, title, year,description,rating,ranking,review,img_url):
         self.title = title
         self.year = year
@@ -59,7 +63,6 @@ def scraping():
     soup = BeautifulSoup(responseText,"html.parser")
     articles = soup.find_all(name="h2",class_="sc-eCImPb MQmRY")
     # print(articles)
-
     return articles[0:10]
 
 # new_movie = Movie(title="Phone Booth",year=2002,description="Publicist Stuart Shepard finds himself trapped in a phone booth, pinned down by an extortionist's sniper rifle. Unable to leave or receive outside help, Stuart's negotiation with the caller leads to a jaw-dropping climax.",rating=7.3,ranking=10,review="My favourite character was the caller.",img_url="https://image.tmdb.org/t/p/w500/tjrX2oWRCM3Tvarz38zlZM7Uc10.jpg")
@@ -87,9 +90,10 @@ def home():
 def add():
     return render_template("add.html")
 
-@app.route("/index")
+@app.route("/index", methods =['GET', 'POST'] )
 def edit():
-    return render_template("edit.html",  )
+    form = EditForm()
+    return render_template("edit.html", form = form)
 
 @app.route("/select")
 def select():

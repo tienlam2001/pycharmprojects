@@ -25,7 +25,7 @@ class Movie(db.Model):
     description = db.Column(db.String, nullable=False)
     rating = db.Column(db.Float, unique=False, nullable=False)
     ranking = db.Column(db.Integer, unique=False, nullable=False)
-    review = db.Column(db.Integer, unique=False, nullable=False)
+    review = db.Column(db.String, unique=False, nullable=False)
     img_url = db.Column(db.String, unique=False, nullable=False)
 
     def __init__(self, title, year,description,rating,ranking,review,img_url):
@@ -71,14 +71,6 @@ def fetchData():
     allMovies = db.session.query(Movie).all()
     return allMovies
 
-
-
-
-
-
-
-
-
 @app.route("/")
 def home():
     myMovie = fetchData()
@@ -88,17 +80,29 @@ def home():
 def update():
     return render_template("add.html")
 
-@app.route("/edit/<name>")
+
+
+@app.route("/edit/<name>",methods=["GET","POST"])
 def edit(name):
     form2 = EditForm()
-    return render_template("edit.html", form=form2, movieName=name)
+    print(form2.rating.data)
+    if form2.rating.data ==None and form2.review.data == None:
+        return render_template("edit.html", form=form2, movieName=name)
+    else:
+        movietoupdate = Movie.query.filter_by(title=name).first()
+        movietoupdate.rating = float(form2.rating.data)
+        movietoupdate.rating = int(form2.review.data)
 
-@app.route("/", methods =['GET', 'POST'] )
-def updateData():
-    ratingMovie = request.form['Rating']
-    reviewMovie = request.form['Review']
-    myMovie = fetchData()
-    return render_template("index.html", movies=myMovie)
+        db.session.commit()
+
+        return home()
+
+# @app.route("/successedit")
+# def success():
+#     myMovie = fetchData()
+#     formdata = reques
+#     return render_template("index.html", movies=myMovie)
+
 
 @app.route("/select")
 def select():

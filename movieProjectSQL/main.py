@@ -16,14 +16,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 Bootstrap(app)
 
-# id
-# title
-# year
-# description
-# rating
-# ranking
-# review
-# img_url
+
 #Movie Object to Enter database
 class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -34,11 +27,6 @@ class Movie(db.Model):
     ranking = db.Column(db.Integer, unique=False, nullable=False)
     review = db.Column(db.Integer, unique=False, nullable=False)
     img_url = db.Column(db.String, unique=False, nullable=False)
-
-
-class EditForm(FlaskForm):
-    rating = StringField('Rating', validators=[DataRequired()])
-    review = StringField('Review', validators=[DataRequired()])
 
     def __init__(self, title, year,description,rating,ranking,review,img_url):
         self.title = title
@@ -51,6 +39,12 @@ class EditForm(FlaskForm):
 
     def __repr__(self):
         return self.title
+
+class EditForm(FlaskForm):
+    rating = StringField('Rating', validators=[DataRequired()])
+    review = StringField('Review', validators=[DataRequired()])
+    submit = SubmitField("Update")
+
 
 
 # db.create_all()
@@ -71,6 +65,12 @@ def scraping():
 # db.session.commit()
 
 
+# Get data from database
+
+def fetchData():
+    allMovies = db.session.query(Movie).all()
+    return allMovies
+
 
 
 
@@ -81,19 +81,24 @@ def scraping():
 
 @app.route("/")
 def home():
-    myMovie = scraping()
-    for movie in myMovie:
-        print(movie.text)
+    myMovie = fetchData()
     return render_template("index.html",movies = myMovie)
 
 @app.route("/add")
-def add():
+def update():
     return render_template("add.html")
 
-@app.route("/index", methods =['GET', 'POST'] )
-def edit():
-    form = EditForm()
-    return render_template("edit.html", form = form)
+@app.route("/edit/<name>")
+def edit(name):
+    form2 = EditForm()
+    return render_template("edit.html", form=form2, movieName=name)
+
+@app.route("/", methods =['GET', 'POST'] )
+def updateData():
+    ratingMovie = request.form['Rating']
+    reviewMovie = request.form['Review']
+    myMovie = fetchData()
+    return render_template("index.html", movies=myMovie)
 
 @app.route("/select")
 def select():

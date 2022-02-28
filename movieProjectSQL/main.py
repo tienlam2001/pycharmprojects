@@ -6,12 +6,12 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import requests
 from bs4 import BeautifulSoup
-# import sqlite3
+#import sqlite3
 
-# db = sqlite3.connect("movieDatabase.db")
+#db = sqlite3.connect("movieDatabase2.db")
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///movieDatabase.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///movieDatabase2.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 Bootstrap(app)
@@ -60,7 +60,7 @@ def scraping():
     return articles[0:10]
 
 # new_movie = Movie(title="Phone Booth",year=2002,description="Publicist Stuart Shepard finds himself trapped in a phone booth, pinned down by an extortionist's sniper rifle. Unable to leave or receive outside help, Stuart's negotiation with the caller leads to a jaw-dropping climax.",rating=7.3,ranking=10,review="My favourite character was the caller.",img_url="https://image.tmdb.org/t/p/w500/tjrX2oWRCM3Tvarz38zlZM7Uc10.jpg")
-
+#
 # db.session.add(new_movie)
 # db.session.commit()
 
@@ -91,7 +91,7 @@ def edit(name):
     else:
         movietoupdate = Movie.query.filter_by(title=name).first()
         movietoupdate.rating = float(form2.rating.data)
-        movietoupdate.rating = int(form2.review.data)
+        movietoupdate.review = form2.review.data
 
         db.session.commit()
 

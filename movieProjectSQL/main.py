@@ -45,6 +45,16 @@ class EditForm(FlaskForm):
     review = StringField('Review', validators=[DataRequired()])
     submit = SubmitField("Update")
 
+class AddForm(FlaskForm):
+    title = StringField('Name', validators=[DataRequired()])
+    year = StringField('Year', validators=[DataRequired()])
+    description = StringField('Description', validators=[DataRequired()])
+    rating = StringField('Rating', validators=[DataRequired()])
+    ranking = StringField('Ranking', validators=[DataRequired()])
+    review = StringField('Review', validators=[DataRequired()])
+    img_url = StringField('Image', validators=[DataRequired()])
+    submit = SubmitField("Add")
+
 
 
 # db.create_all()
@@ -59,10 +69,8 @@ def scraping():
     # print(articles)
     return articles[0:10]
 
-# new_movie = Movie(title="Phone Booth",year=2002,description="Publicist Stuart Shepard finds himself trapped in a phone booth, pinned down by an extortionist's sniper rifle. Unable to leave or receive outside help, Stuart's negotiation with the caller leads to a jaw-dropping climax.",rating=7.3,ranking=10,review="My favourite character was the caller.",img_url="https://image.tmdb.org/t/p/w500/tjrX2oWRCM3Tvarz38zlZM7Uc10.jpg")
 #
-# db.session.add(new_movie)
-# db.session.commit()
+
 
 
 # Get data from database
@@ -74,11 +82,15 @@ def fetchData():
 @app.route("/")
 def home():
     myMovie = fetchData()
-    return render_template("index.html",movies = myMovie)
+    return render_template("index.html",movies=myMovie)
 
-@app.route("/add")
+@app.route("/add",methods=["GET","POST"])
 def update():
-    return render_template("add.html")
+    addForm = AddForm()
+    if addForm.title.data != None:
+        new_movie = Movie(title="Phone Booth",year=2002,description="Publicist Stuart Shepard finds himself trapped in a phone booth, pinned down by an extortionist's sniper rifle. Unable to leave or receive outside help, Stuart's negotiation with the caller leads to a jaw-dropping climax.",rating=7.3,ranking=10,review="My favourite character was the caller.",img_url="https://image.tmdb.org/t/p/w500/tjrX2oWRCM3Tvarz38zlZM7Uc10.jpg")
+    return render_template("add.html", form=addForm)
+
 
 
 
@@ -92,9 +104,7 @@ def edit(name):
         movietoupdate = Movie.query.filter_by(title=name).first()
         movietoupdate.rating = float(form2.rating.data)
         movietoupdate.review = form2.review.data
-
         db.session.commit()
-
         return home()
 
 # @app.route("/successedit")

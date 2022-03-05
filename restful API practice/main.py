@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import pandas
+import random
 
 app = Flask(__name__)
 
@@ -31,20 +33,48 @@ def home():
 
 @app.route("/random", methods=["GET"])
 def randomFunction():
-    coffee = db.session.query(Cafe).all()
-    print(coffee)
+    coffee = db.session.query(Cafe).all()    
+    random_cafe = random.choice(coffee)
+    return jsonify(cafe={
+        "id": random_cafe.id,
+        "name": random_cafe.name,
+        "map_url": random_cafe.map_url,
+        "img_url": random_cafe.img_url,
+        "seats": random_cafe.seats,
+        "location":random_cafe.location,
+        "has_wifi": random_cafe.has_wifi,
+        "can_take_calls": random_cafe.can_take_calls,
+    })
+
+array = []
+coffee = db.session.query(Cafe).all()
+for i in range(len(coffee)):
+    cafe = {
+        "id": coffee[i].id,
+        "name": coffee[i].name,
+        "map_url": coffee[i].map_url,
+        "img_url": coffee[i].img_url,
+        "seats": coffee[i].seats,
+        "has_wifi": coffee[i].has_wifi,
+        "location": coffee[i].location,
+        "can_take_calls": coffee[i].can_take_calls,
+    }
+    array.append(cafe)
+
+@app.route("/all", methods=["GET"])
+def getAll():
+    global array
+    return jsonify(array)
 
 
-    
-
-## HTTP GET - Read Record
-
-## HTTP POST - Create Record
-
-## HTTP PUT/PATCH - Update Record
-
-## HTTP DELETE - Delete Record
-
+@app.route("/search/<de>", methods=["GET"])
+def getSearch(de):
+    global array
+    print(de)
+    for i in range(len(array)):
+        print(array[i]["location"])
+        if array[i]["location"] == de.data:
+            print("Trye")
 
 if __name__ == '__main__':
     app.run(debug=True)

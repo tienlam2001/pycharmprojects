@@ -67,14 +67,18 @@ def getAll():
     return jsonify(array)
 
 
-@app.route("/search/<de>", methods=["GET"])
-def getSearch(de):
+@app.route("/search", methods=["GET"])
+def getSearch():
     global array
-    print(de)
-    for i in range(len(array)):
-        print(array[i]["location"])
-        if array[i]["location"] == de.data:
-            print("Trye")
+    query_location = request.args.get("loc")
+    print(query_location)
+    for i in array:
+        print(i['location'])
+        if i["location"] == query_location:
+            return jsonify(i)
+
+    return jsonify(error="error")
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=5000)

@@ -32,8 +32,7 @@ def home():
 @app.route("/random", methods=["GET"])
 def randomFunction():
     coffee = db.session.query(Cafe).all()
-    print(coffee)
-
+    return jsonify(coffee)
 
     
 

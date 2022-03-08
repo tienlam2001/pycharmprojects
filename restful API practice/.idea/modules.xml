@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../movieProjectSQL/.idea/movieProjectSQL.iml" filepath="$PROJECT_DIR$/../movieProjectSQL/.idea/movieProjectSQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/restful API practice.iml" filepath="$PROJECT_DIR$/.idea/restful API practice.iml" />
     </modules>
   </component>

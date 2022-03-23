@@ -17,7 +17,7 @@ x = datetime.datetime.now()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
-Bootstrap(app)
+bootstrap = Bootstrap(app)
 
 ##CONNECT TO DB
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
@@ -58,17 +58,20 @@ def get_all_posts():
 def addnewpost():
     form = CreatePostForm()
     if form.validate():
-        post = BlogPost(
-            title = form.title.data,
-            subtitle=form.subtitle.data,
-            date = x.strftime("%B") + " "+ x.strftime("%d") +"," + x.strftime("%Y"),
-            body = form.body.data,
-            author = form.author.data,
-            img_url = form.img_url.data
-        )
-        db.session.add(post)
-        db.session.commit()
-        return get_all_posts()
+        exists = db.session.query(BlogPost).filter_by(name='form.title.data').first()
+        print(exists)
+
+        # post = BlogPost(
+        #     title = form.title.data,
+        #     subtitle=form.subtitle.data,
+        #     date = x.strftime("%B") + " "+ x.strftime("%d") +"," + x.strftime("%Y"),
+        #     body = form.body.data,
+        #     author = form.author.data,
+        #     img_url = form.img_url.data
+        # )
+        # db.session.add(post)
+        # db.session.commit()
+        # return get_all_posts()
 
     return render_template("make-post.html",formCreate=form)
 
@@ -76,11 +79,16 @@ def addnewpost():
 @app.route("/post/<int:index>")
 def show_post(index):
     posts = db.session.query(BlogPost).all()
-    requested_post = None
-    for blog_post in posts:
-        if blog_post["id"] == index:
-            requested_post = blog_post
+    print(posts)
+    requested_post = posts[index - 1]
+    # for blog_post in posts:
+    #     if blog_post["id"] == index:
+    #         requested_post = blog_post
     return render_template("post.html", post=requested_post)
+
+@app.route("/edit-post/<post_id>")
+def editPost(post_id):
+    return render_template("make-post.html")
 
 
 @app.route("/about")

@@ -5,10 +5,13 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, URL
 from flask_ckeditor import CKEditor, CKEditorField
+import datetime
+
+x = datetime.datetime.now()
 
 
 ## Delete this code:
-#import requests
+
 #posts = requests.get("https://api.npoint.io/43644ec4f0013682fc0d").json()
 
 app = Flask(__name__)
@@ -32,7 +35,7 @@ class BlogPost(db.Model):
     author = db.Column(db.String(250), nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
 
-posts = db.session.query(BlogPost).all()
+
 
 
 
@@ -42,18 +45,37 @@ class CreatePostForm(FlaskForm):
     subtitle = StringField("Subtitle", validators=[DataRequired()])
     author = StringField("Your Name", validators=[DataRequired()])
     img_url = StringField("Blog Image URL", validators=[DataRequired(), URL()])
-    body = StringField("Blog Content", validators=[DataRequired()])
+    body = CKEditorField("Blog Content", validators=[DataRequired()])
     submit = SubmitField("Submit Post")
 
 
 @app.route('/')
 def get_all_posts():
-    global posts
+    posts = db.session.query(BlogPost).all()
     return render_template("index.html", all_posts=posts)
+
+@app.route('/new-post',methods=["GET","POST"])
+def addnewpost():
+    form = CreatePostForm()
+    if form.validate():
+        post = BlogPost(
+            title = form.title.data,
+            subtitle=form.subtitle.data,
+            date = x.strftime("%B") + " "+ x.strftime("%d") +"," + x.strftime("%Y"),
+            body = form.body.data,
+            author = form.author.data,
+            img_url = form.img_url.data
+        )
+        db.session.add(post)
+        db.session.commit()
+        return get_all_posts()
+
+    return render_template("make-post.html",formCreate=form)
 
 
 @app.route("/post/<int:index>")
 def show_post(index):
+    posts = db.session.query(BlogPost).all()
     requested_post = None
     for blog_post in posts:
         if blog_post["id"] == index:
@@ -71,4 +93,4 @@ def contact():
     return render_template("contact.html")
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True)

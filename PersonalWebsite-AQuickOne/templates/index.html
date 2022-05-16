@@ -7,7 +7,9 @@
 
 		<title>Lam Site</title>
 		<meta charset="utf-8" />
+		<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="{{url_for('static', filename='/css/index.css')}}" />
+		<link rel="stylesheet" href="{{url_for('static', filename='/css/about.css')}}" />
 	</head>
 	<body>
 		<div id ="mainPage">
@@ -26,9 +28,14 @@
 				</div>
 
 		</div>
+		<div id ="aboutPage"></div>
 	<div id="myContainer"></div>
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js" integrity="sha512-4P0ZJ49OMXe3jXT+EsEaq82eNwFeyYL81LeHGzGcEhowFbTqeQ80q+NEkgsE8tHPs6aCqvi7U+XWliAjDmT5Lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="{{url_for('static', filename='/js/index.js')}}"></script>
+	<script type ="text/babel" src="{{url_for('static', filename='/js/aboutReact.js')}}"></script>
 
 	</body>
 </html>

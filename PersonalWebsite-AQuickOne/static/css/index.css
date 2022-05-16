@@ -10,7 +10,7 @@ div#mainPage{
 	align-items:center;
 }
 div#mainFrame{
-	border: 1px solid black;
+	border: 0.5px solid black;
 	width:80vw;
 	height: 50vh;
 	display:flex;
@@ -21,7 +21,7 @@ div#mainFrame{
 }
 div#introduction h1{
 	text-align:center;
-	font-family:monospace;
+	font-family: 'MuseoModerno', cursive;
 
 }
 div#introduction{
@@ -37,5 +37,9 @@ div#mainFrame ul li{
 	border: 2px solid;
 	padding: 1rem;
 	border-image: linear-gradient(45deg, #ffa175, white) 1;
+	font-family: 'MuseoModerno', cursive;
 	margin:30px;
 }
+
+
+

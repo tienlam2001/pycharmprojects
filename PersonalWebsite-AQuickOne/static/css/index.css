@@ -1,5 +1,6 @@
 html,body{
 	margin:0;
+
 }
 div#mainPage{
 	background-color: white;
@@ -41,5 +42,16 @@ div#mainFrame ul li{
 	margin:30px;
 }
 
+div#mainFrame ul li:hover{
+    cursor:pointer;
+}
 
+div#aboutPage{
+    border: 1px solid black;
+    width: 100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
+}

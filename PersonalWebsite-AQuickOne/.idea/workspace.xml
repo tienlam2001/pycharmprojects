@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2ae949e-fce5-42c0-8195-a2c50baa7c5d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/about.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/skill.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/aboutReact.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/about.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/aboutReact.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/aboutReact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day 67 - blog/templates/make-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day 67 - blog/templates/make-post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stockImportData/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../stockImportData/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../upgradeblog/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../upgradeblog/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../upgradeblog/.idea/upgradeblog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../upgradeblog/.idea/upgradeblog.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +26,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/static/js/index.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/static/css/index.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/static/css/index.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/static/js/index.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -62,7 +72,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/venv/bin/Python" />
+      <option name="SDK_HOME" value="C:\Users\tienl\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -98,5 +108,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

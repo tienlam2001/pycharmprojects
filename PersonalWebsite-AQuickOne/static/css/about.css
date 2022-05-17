@@ -1,0 +1,34 @@
+div#aboutReact{
+    width:90vw;
+    height:90vh;
+    border: 1px solid red;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+h1#aboutTitle{
+    text-align:center;
+}
+
+
+section.aboutCommon{
+    width:35vw;
+    height: 35vh;
+    margin: 20px;
+    font-size:20px;
+    font-family:monospace;
+
+}
+div.flip-card{
+    background-color: black;
+}
+section.about{
+}
+
+div#sectionId{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}

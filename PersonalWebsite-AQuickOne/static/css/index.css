@@ -37,7 +37,7 @@ div#mainFrame ul li{
 	min-height: 200px;
 	border: 2px solid;
 	padding: 1rem;
-	border-image: linear-gradient(45deg, #ffa175, white) 1;
+	border-image: linear-gradient(45deg, #ffa175, lightgreen) 1;
 	font-family: 'MuseoModerno', cursive;
 	margin:30px;
 }
@@ -47,6 +47,15 @@ div#mainFrame ul li:hover{
 }
 
 div#aboutPage{
+    border: 1px solid black;
+    width: 100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+div#skillPage{
     border: 1px solid black;
     width: 100vw;
     height:100vh;

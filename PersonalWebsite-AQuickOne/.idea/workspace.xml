@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2ae949e-fce5-42c0-8195-a2c50baa7c5d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/js/skillReact.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/about.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/skill.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/skill.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/aboutReact.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/aboutReact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day 67 - blog/templates/make-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day 67 - blog/templates/make-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stockImportData/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../stockImportData/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../upgradeblog/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../upgradeblog/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../upgradeblog/.idea/upgradeblog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../upgradeblog/.idea/upgradeblog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

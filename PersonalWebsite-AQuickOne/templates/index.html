@@ -10,6 +10,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="{{url_for('static', filename='/css/index.css')}}" />
 		<link rel="stylesheet" href="{{url_for('static', filename='/css/about.css')}}" />
+		<link rel="stylesheet" href="{{url_for('static', filename='/css/skill.css')}}" />
+
 	</head>
 	<body>
 		<div id ="mainPage">
@@ -28,14 +30,41 @@
 				</div>
 
 		</div>
-		<div id ="aboutPage"></div>
+		<div id ="aboutPage">
+				   <div id ="aboutReact">
+			 <h1 id ="aboutTitle"> About me </h1>
+			 <div id ="sectionId">
+			    <section class = "about aboutCommon">
+			        <p>"Hello, My name is Lam, I am 20 years old. I am currently a college student, pursing dual degree Computer Science and Finance. I am usually coding, read, and workout in my freetime. Staying busy is my life goal, just because it got boring by siting around."</p>
+			    </section>
+			    <section class = "hobbies aboutCommon">
+			        <ul>
+<!--			            <img src="static/images/introduction.jpg" alt="Avatar" style="width:300px;height:300px;"></img>-->
+
+			            <li> Coding </li>
+			            <li> Investment</li>
+			            <li> Read books or annual reports</li>
+			            <li> Study new skills</li>
+			        </ul>
+			    </section>
+			 </div>
+		 </div>
+
+
+		</div>
+		<div id ="skillPage">
+			<div id ="skillReact">
+				 <h1 id ="skillTitle">Skills</h1>
+<!--				 <img src="introduction.jpg" alt="Avatar" style="width:300px;height:300px;"></img>-->
+			 </div>
+
+
+		</div>
 	<div id="myContainer"></div>
 		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
 	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js" integrity="sha512-4P0ZJ49OMXe3jXT+EsEaq82eNwFeyYL81LeHGzGcEhowFbTqeQ80q+NEkgsE8tHPs6aCqvi7U+XWliAjDmT5Lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="{{url_for('static', filename='/js/index.js')}}"></script>
-	<script type ="text/babel" src="{{url_for('static', filename='/js/aboutReact.js')}}"></script>
-
 	</body>
 </html>

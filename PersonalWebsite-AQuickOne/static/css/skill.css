@@ -1,0 +1,51 @@
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 100vw;
+    height : 100vh;
+}
+div#skillCanvas{
+    width:90vw;
+    height:90vh;
+    border: 1px solid red;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+img.IconImages{
+    width: auto;
+    margin: 2em;
+    border-radius:20px;
+    height: 100px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+img.IconImages:hover{
+    cursor:pointer;
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(130,255,86,0);
+    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(130,255,86,0);
+}
+
+div#imageContainer{
+    width :auto;
+    height: 300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}

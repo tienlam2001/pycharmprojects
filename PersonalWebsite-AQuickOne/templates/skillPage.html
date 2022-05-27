@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/skill.css')}}">
+    <title>My Skills</title>
+</head>
+<body>
+    <div id ="skillCanvas">
+        <h1>Skill</h1>
+
+        <div id ="imageContainer">
+            {% for image in images:%}
+            <img class="IconImages" src="{{url_for('static',filename='/images/' +image)}}" alt="logo">
+            {% endfor %}
+        </div>
+
+
+    </div>
+</body>
+</html>

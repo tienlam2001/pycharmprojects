@@ -12,11 +12,15 @@
 
         <div id ="imageContainer">
             {% for image in images:%}
-            <img class="IconImages" src="{{url_for('static',filename='/images/' +image)}}" alt="logo">
+            <img class="IconImages" src="{{url_for('static',filename='/images/' +image)}}" alt="logo"/>
             {% endfor %}
         </div>
-
-
+        <a id ="showMore" href="#showRoom">Show More</a>
+    </div>
+    <div id = "showRoom">
+        <div id ="show">this is show</div>
+        <div id ="menu"> this is menu</div>
     </div>
 </body>
+<script src ="{{url_for('static',filename='/js/skilljs.js')}}"></script>
 </html>

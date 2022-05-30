@@ -1,13 +1,14 @@
+html{
+}
 body{
     display:flex;
+    flex-direction: column;
     justify-content:center;
     align-items:center;
-    width: 100vw;
-    height : 100vh;
 }
 div#skillCanvas{
-    width:90vw;
-    height:90vh;
+    width:100vw;
+    height:100vh;
     border: 1px solid red;
     border-radius:20px;
     display:flex;
@@ -23,7 +24,6 @@ img.IconImages{
     height: 100px;
     animation-duration: 3s;
     animation-name: slidein;
-    animation-iteration-count: infinite;
 }
 @keyframes slidein {
   from {
@@ -48,4 +48,28 @@ div#imageContainer{
     display:flex;
     justify-content:center;
     align-items:center;
+}
+a#showMore{
+    border: 1px solid black;
+    font-size : 20px;
+}
+
+div#showRoom{
+    width: 100vw;
+    height: 100vh;
+    border : 1px solid yellow;
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+
+div#show{
+    width: 70vw;
+    height:100vh;
+}
+div#menu{
+    width: 30vw;
+    height: 100vh;
+    border :  1px solid black;
 }

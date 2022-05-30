@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url_for('static',filename='/css/skill.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
     <title>My Skills</title>
 </head>
 <body>
     <div id ="skillCanvas">
-        <h1>Skill</h1>
+        <h1 id ="titleofskill">Skill Sets</h1>
 
         <div id ="imageContainer">
             {% for image in images:%}
@@ -18,8 +21,21 @@
         <a id ="showMore" href="#showRoom">Show More</a>
     </div>
     <div id = "showRoom">
-        <div id ="show">this is show</div>
-        <div id ="menu"> this is menu</div>
+        <div id ="show">
+            <h2>mySkill</h2>
+            <p></p>
+
+        </div>
+        <div id ="menu">
+            <ul id ="listofimages">
+            {% for image in images:%}
+                <li>
+            <img class="menuShows" src="{{url_for('static',filename='/images/' +image)}}" alt="logo"/>
+            </li>
+                    {% endfor %}
+            </ul>
+
+        </div>
     </div>
 </body>
 <script src ="{{url_for('static',filename='/js/skilljs.js')}}"></script>

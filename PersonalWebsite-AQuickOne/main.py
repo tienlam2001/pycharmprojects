@@ -1,8 +1,17 @@
 from flask import Flask, render_template
+import json
 
 app =  Flask(__name__)
 
 images = ["html.png","csslogo.png","reactjs.png","javascript.png","phplogo.png","pythonIcon.png","javaIcon.png"]
+#
+#
+#
+# json_object = json.dumps(textData, indent=4)
+#
+# # Writing to sample.json
+# with open("data.json", "w") as outfile:
+#     outfile.write(json_object)
 
 
 @app.route("/")

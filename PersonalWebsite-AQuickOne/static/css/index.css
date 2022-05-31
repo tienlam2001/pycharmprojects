@@ -9,6 +9,7 @@ div#mainPage{
 	display:flex;
 	justify-content:center;
 	align-items:center;
+	z-index:1;
 }
 div#mainFrame{
 	border: 0.5px solid black;
@@ -64,3 +65,4 @@ div#skillPage{
     align-items:center;
 
 }
+

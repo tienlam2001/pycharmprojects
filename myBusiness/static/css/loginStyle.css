@@ -1,0 +1,47 @@
+html{
+    overflow-x:hidden;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+div#mainContainer{
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+input#email, input#password{
+    width: 200px;
+    height: 20px;
+    border: none;
+    border-bottom:3px solid lightgreen;
+    transition: width 2s;
+
+}
+form{
+
+}
+input#email:focus, input#password:focus{
+    outline:none;
+    width: 300px;
+}
+
+label{
+    font-family:'monospace'
+}
+
+input#submitButton{
+    border-radius: 8px;
+    background-color: lightgreen;
+    border: none;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+}
+input#submitButton:hover{
+    background-color: white;
+    border: 3px solid lightgreen
+}

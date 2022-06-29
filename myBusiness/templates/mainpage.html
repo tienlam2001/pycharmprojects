@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FinSolution | Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/headerStyle.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/mainPageStyle.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+    <nav>
+        <ul>
+            <li><a href="">Market</a></li>
+            <li><a href="">Investment</a></li>
+            <li><a href="">Debt</a></li>
+            <li><a href="">Assets</a></li>
+            <li><a href="">Pay Debts</a></li>
+            <li><a href="">SignOut</a></li>
+        </ul>
+    </nav>
+<body>
+    <div id ="mainCanvas">
+        <h1>Welcome Mr. {{name}}</h1>
+        <div id ="canvas">
+            <div id ="networth" class="commonClass">
+                <canvas id ="incomeChart"></canvas>
+                <div id ="inforNet">
+                <h2>Your Net Worth</h2>
+                <p class ="networthClass">{{date}}</p>
+                <p class ="networthClass">{{networth}}</p>
+                </div>
+            </div>
+
+            <div id = "spending" class="commonClass">
+                <h2>Your Total Spending This Month</h2>
+                <div id = "spendingChartContainer">
+                <canvas id = "spendingChart"></canvas>
+                </div>
+
+                <div id = "inforSpending">
+
+                    <a href="#">See all spendings</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-time.v2.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v3.min.js"></script>
+    <script src = "https://d3js.org/d3-axis.v1.min.js"></script>
+
+    <script src = "{{url_for('static',filename='/js/mainPage.js')}}"></script>
+</body>
+</html>

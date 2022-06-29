@@ -1,0 +1,73 @@
+html{
+    overflow-x:hidden;
+
+}
+div.commonClass{
+    margin: 20px;
+    min-width: 70vw;
+    min-height: 80vh;
+    border-radius: 15px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border: 1px solid lightgreen;
+
+}
+ul li a{
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Mukta', sans-serif;
+}
+div#inforNet{
+    width:60vw;
+    height: 30vh;
+    text-align:center;
+
+
+}
+
+canvas#incomeChart{
+    min-height:50vh;
+    position:relative;
+}
+
+div#networth p, h2{
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Mukta', sans-serif;
+
+
+}
+p.networthClass{
+    font-size: 20px;
+}
+
+div#mainCanvas{
+    width:100vw;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+div#canvas{
+    width:80vw;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+
+canvas#spendingChart{
+    width: 20vw;
+    height: 20vh;
+}
+
+
+div#spendingChartContainer{
+    width: 25vw;
+    height: 55vh;
+    margin-top: 5px;
+}

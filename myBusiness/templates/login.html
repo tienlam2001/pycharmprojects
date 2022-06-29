@@ -1,0 +1,32 @@
+{% include "header.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/loginStyle.css')}}">
+</head>
+<body>
+
+    <div id = "mainContainer">
+        <form method="POST" enctype="multipart/form-data" novalidate action="{{url_for('verifyAccount')}}">
+            {{form.csrf_token}}
+            <br>
+            <p>
+            {{form.email.label}}<br>{{form.email(size=30)}}
+    <!--            {% for err in form.email.errors %}-->
+    <!--            <span style ="color : red"> {{err}}</span>-->
+    <!--            {% endfor %}-->
+            </p>
+            <p>
+            {{form.password.label}}<br>{{form.password(size=30)}}
+    <!--            {% for err in form.password.errors %}-->
+    <!--            <span style ="color : red"> {{err}}</span>-->
+    <!--            {% endfor %}-->
+            </p>
+            <input id ="submitButton" type="submit"></input>
+
+        </form>
+    </div>
+</body>
+</html>

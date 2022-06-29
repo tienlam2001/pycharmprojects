@@ -1,0 +1,226 @@
+Index: templates/skillPage.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor\" crossorigin=\"anonymous\">\n    <link rel=\"stylesheet\" href=\"{{url_for('static',filename='/css/skill.css')}}\">\n    <title>My Skills</title>\n</head>\n<body>\n    <div id =\"skillCanvas\">\n        <h1>Skill</h1>\n\n        <div id =\"imageContainer\">\n            {% for image in images:%}\n            <img class=\"IconImages\" src=\"{{url_for('static',filename='/images/' +image)}}\" alt=\"logo\">\n            {% endfor %}\n        </div>\n\n\n    </div>\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/skillPage.html b/templates/skillPage.html
+--- a/templates/skillPage.html	(revision 916ba2e9b71ce2f017a810cf1c4b47c1a23de553)
++++ b/templates/skillPage.html	(date 1653717129290)
+@@ -18,5 +18,6 @@
+ 
+ 
+     </div>
++    <script src ="{{url_for('static', filename='/js/skillFunction.js')}}"></script>
+ </body>
+ </html>
+\ No newline at end of file
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask import Flask, render_template\n\napp =  Flask(__name__)\n\nimages = [\"html.png\",\"csslogo.png\",\"reactjs.png\",\"javascript.png\",\"phplogo.png\",\"pythonIcon.png\",\"javaIcon.png\"]\n\n\n@app.route(\"/\")\ndef home():\n    return render_template(\"index.html\")\n\n@app.route(\"/about\")\ndef renderAbout():\n    return render_template(\"about.html\")\n\n@app.route(\"/skill\")\ndef renderSkill():\n    return render_template(\"skillPage.html\", images=images)\n\nif __name__ == '__main__':\n    app.run(debug=True)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision 916ba2e9b71ce2f017a810cf1c4b47c1a23de553)
++++ b/main.py	(date 1653716925445)
+@@ -17,5 +17,8 @@
+ def renderSkill():
+     return render_template("skillPage.html", images=images)
+ 
++def imageClicked():
++    print("Image Clicked")
++
+ if __name__ == '__main__':
+     app.run(debug=True)
+\ No newline at end of file
+Index: static/css/skill.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body{\n    display:flex;\n    justify-content:center;\n    align-items:center;\n    width: 100vw;\n    height : 100vh;\n}\ndiv#skillCanvas{\n    width:90vw;\n    height:90vh;\n    border: 1px solid red;\n    border-radius:20px;\n    display:flex;\n    flex-direction:column;\n    justify-content:center;\n    align-items:center;\n}\n\nimg.IconImages{\n    width: auto;\n    margin: 2em;\n    border-radius:20px;\n    height: 100px;\n    animation-duration: 3s;\n    animation-name: slidein;\n    animation-iteration-count: infinite;\n}\n@keyframes slidein {\n  from {\n    margin-left: 100%;\n    width: 300%;\n  }\n\n  to {\n    margin-left: 0%;\n    width: 100%;\n  }\n}\nimg.IconImages:hover{\n    cursor:pointer;\n    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(130,255,86,0);\n    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(130,255,86,0);\n}\n\ndiv#imageContainer{\n    width :auto;\n    height: 300px;\n    display:flex;\n    justify-content:center;\n    align-items:center;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/static/css/skill.css b/static/css/skill.css
+--- a/static/css/skill.css	(revision 916ba2e9b71ce2f017a810cf1c4b47c1a23de553)
++++ b/static/css/skill.css	(date 1653716796908)
+@@ -23,7 +23,6 @@
+     height: 100px;
+     animation-duration: 3s;
+     animation-name: slidein;
+-    animation-iteration-count: infinite;
+ }
+ @keyframes slidein {
+   from {
+Index: static/js/skillReact.js
+===================================================================
+diff --git a/static/js/skillReact.js b/static/js/skillReact.js
+deleted file mode 100644
+--- a/static/js/skillReact.js	(revision 916ba2e9b71ce2f017a810cf1c4b47c1a23de553)
++++ /dev/null	(revision 916ba2e9b71ce2f017a810cf1c4b47c1a23de553)
+@@ -1,34 +0,0 @@
+-'use strict';
+-
+-const e = React.createElement;
+-
+-//function Flipcard(props){
+-//    return(
+-//        <div class="flip-card">
+-//          <div class="flip-card-inner">
+-//            <div class="flip-card-front">
+-//              <img src="static/images/introduction.jpg" alt="Avatar" style="width:300px;height:300px;">
+-//            </div>
+-//            <div class="flip-card-back">
+-//              <p>{props.text}</p>
+-//            </div>
+-//          </div>
+-//        </div>
+-//    )
+-//}
+-
+-class LikeButton extends React.Component {
+-  constructor(props) {
+-    super(props);
+-    this.state = { liked: false };
+-  }
+-
+-  render() {
+-    return (
+-    );
+-  }
+-}
+-// Render Root Functions
+-const domContainer = document.querySelector('#skillPage');
+-const root = ReactDOM.createRoot(domContainer);
+-root.render(e(LikeButton));
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"a2ae949e-fce5-42c0-8195-a2c50baa7c5d\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/templates/skillPage.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/PersonalWebsite-AQuickOne.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/PersonalWebsite-AQuickOne.iml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/modules.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/static/css/skill.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/static/css/skill.css\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/static/images/introduction.jpg\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/static/js/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/static/js/index.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/templates/index.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/index.html\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"HTML File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/templates/skillPage.html\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/templates/index.html\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/static/css/skill.css\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/static/css/about.css\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/main.py\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/static/css/index.css\" root0=\"FORCE_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/static/js/index.js\" root0=\"FORCE_HIGHLIGHTING\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"28uo3Xo4vg9uOfCJQ5VGOiXykkM\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showMembers\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../blog-templating-start\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/static\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\n      <module name=\"PersonalWebsite-AQuickOne\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"C:\\Users\\tienl\\venv\\Scripts\\python.exe\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"a2ae949e-fce5-42c0-8195-a2c50baa7c5d\" name=\"Changes\" comment=\"\" />\n      <created>1652075633741</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1652075633741</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 916ba2e9b71ce2f017a810cf1c4b47c1a23de553)
++++ b/.idea/workspace.xml	(date 1653964434785)
+@@ -1,16 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="a2ae949e-fce5-42c0-8195-a2c50baa7c5d" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/templates/skillPage.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/PersonalWebsite-AQuickOne.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PersonalWebsite-AQuickOne.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++    <list default="true" id="a2ae949e-fce5-42c0-8195-a2c50baa7c5d" name="Changes" comment="hjkgh">
++      <change afterPath="$PROJECT_DIR$/static/js/skillFunctions.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/static/css/skill.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/skill.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/static/images/introduction.jpg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/static/js/skillReact.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/skillPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/skillPage.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -37,12 +34,12 @@
+   </component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/templates/skillPage.html" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/templates/index.html" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/static/js/index.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/static/css/skill.css" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/static/css/index.css" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/static/css/about.css" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/static/css/index.css" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/static/js/index.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/templates/index.html" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -70,17 +67,17 @@
+   </component>
+   <component name="RunManager">
+     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+-      <module name="PersonalWebsite-AQuickOne" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+-      <option name="SDK_HOME" value="C:\Users\tienl\venv\Scripts\python.exe" />
++      <option name="SDK_HOME" value="$USER_HOME$/venv/bin/Python" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+       <option name="IS_MODULE_SDK" value="false" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
++      <module name="" />
+       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+@@ -112,6 +109,9 @@
+         </entry>
+       </map>
+     </option>
+-    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="hjkgh" />
++    <option name="LAST_COMMIT_MESSAGE" value="hjkgh" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: static/js/skillFunctions.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/static/js/skillFunctions.js b/static/js/skillFunctions.js
+new file mode 100644
+--- /dev/null	(date 1653717119199)
++++ b/static/js/skillFunctions.js	(date 1653717119199)
+@@ -0,0 +1,1 @@
++console.log("Hello WOrld")
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.9 (venv)\" project-jdk-type=\"Python SDK\" />\n  <component name=\"PyCharmProfessionalAdvertiser\">\n    <option name=\"shown\" value=\"true\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 916ba2e9b71ce2f017a810cf1c4b47c1a23de553)
++++ b/.idea/misc.xml	(date 1653889226856)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (venv)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (venv) (2)" project-jdk-type="Python SDK" />
+   <component name="PyCharmProfessionalAdvertiser">
+     <option name="shown" value="true" />
+   </component>
+Index: .idea/PersonalWebsite-AQuickOne.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"PYTHON_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\">\n    <content url=\"file://$MODULE_DIR$\" />\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.9 (venv)\" jdkType=\"Python SDK\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n    <orderEntry type=\"module\" module-name=\"blog-templating-start\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/PersonalWebsite-AQuickOne.iml b/.idea/PersonalWebsite-AQuickOne.iml
+--- a/.idea/PersonalWebsite-AQuickOne.iml	(revision 916ba2e9b71ce2f017a810cf1c4b47c1a23de553)
++++ b/.idea/PersonalWebsite-AQuickOne.iml	(date 1653889226840)
+@@ -2,7 +2,7 @@
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="jdk" jdkName="Python 3.9 (venv)" jdkType="Python SDK" />
++    <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+     <orderEntry type="module" module-name="blog-templating-start" />
+   </component>

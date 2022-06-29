@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../BookLibrary/.idea/BookLibrary.iml" filepath="$PROJECT_DIR$/../BookLibrary/.idea/BookLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/PersonalWebsite-AQuickOne.iml" filepath="$PROJECT_DIR$/.idea/PersonalWebsite-AQuickOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/../blog-templating-start/.idea/blog-templating-start.iml" filepath="$PROJECT_DIR$/../blog-templating-start/.idea/blog-templating-start.iml" />
     </modules>

@@ -4,10 +4,5 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-<<<<<<< HEAD
-=======
-    <orderEntry type="module" module-name="blog-templating-start" />
-    <orderEntry type="module" module-name="BookLibrary" />
->>>>>>> dcdedb30c13cdf04e5a18949728a1e2af61e2809
   </component>
 </module>

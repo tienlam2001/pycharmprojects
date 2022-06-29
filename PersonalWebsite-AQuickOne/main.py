@@ -17,5 +17,10 @@ def renderAbout():
 def renderSkill():
     return render_template("skillPage.html", images=images)
 
+@app.route("/contact", methods=['post'])
+def contactMe():
+    return render_template("Contactme.html")
+
+
 if __name__ == '__main__':
     app.run(debug=True)

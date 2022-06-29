@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/../BookLibrary/.idea/BookLibrary.iml" filepath="$PROJECT_DIR$/../BookLibrary/.idea/BookLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/../day 67 - blog/.idea/day 67 - blog.iml" filepath="$PROJECT_DIR$/../day 67 - blog/.idea/day 67 - blog.iml" />
       <module fileurl="file://$PROJECT_DIR$/../flaskwtf/.idea/flaskwtf.iml" filepath="$PROJECT_DIR$/../flaskwtf/.idea/flaskwtf.iml" />
+=======
+      <module fileurl="file://$USER_HOME$/pycharmprojects/blog-templating-start/.idea/blog-templating-start.iml" filepath="$USER_HOME$/pycharmprojects/blog-templating-start/.idea/blog-templating-start.iml" />
+>>>>>>> dcdedb30c13cdf04e5a18949728a1e2af61e2809
       <module fileurl="file://$PROJECT_DIR$/.idea/myBusiness.iml" filepath="$PROJECT_DIR$/.idea/myBusiness.iml" />
     </modules>
   </component>

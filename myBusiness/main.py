@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask,request, render_template, jsonify
 import json
 import requests
@@ -162,3 +163,7 @@ def manageCard():
 
 if __name__ == "__main__":
     app.run(debug=True,port='5000')
+=======
+from flask import Flask
+
+>>>>>>> dcdedb30c13cdf04e5a18949728a1e2af61e2809

@@ -19,7 +19,6 @@ class User(UserMixin, db.Model):
 #Line below only required once, when creating DB.
 # db.create_all()
 
-isSigned = False
 
 @app.route('/')
 def home():
@@ -50,7 +49,10 @@ def login():
         if findUser == None:
             raise ValueError("Hmm")
         else:
+            # if findUser.password == request.form['password']:
             return secrets(findUser.name)
+            # else:
+            #     pass
     except:
         print("error")
 
@@ -69,8 +71,7 @@ def logout():
 
 @app.route('/download')
 def download():
-    pass
-
+    return send_from_directory('')
 
 if __name__ == "__main__":
     app.run(debug=True,port=3000)

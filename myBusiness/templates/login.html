@@ -9,7 +9,14 @@
 <body>
 
     <div id = "mainContainer">
-        <form method="POST" enctype="multipart/form-data" novalidate action="{{url_for('verifyAccount')}}">
+        {% block content %}
+            {% if condition %}
+                <div>Right Password</div>
+            {% else %}
+                <div>Wrong Password</div>
+            {% endif %}
+        {% endblock content %}
+        <form method="POST" enctype="multipart/form-data" novalidate action="{{url_for('loginPage')}}">
             {{form.csrf_token}}
             <br>
             <p>

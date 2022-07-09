@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask,request, render_template, jsonify
 import json
 import requests
@@ -95,31 +94,26 @@ def mainPage(username):
     return render_template("mainPage.html",name=username,networth="$200,000",date="6/2/2022")
 
 
-@app.route("/login")
+@app.route("/login",methods=['GET','POST'])
 def loginPage():
+    try:
+        findUser = User.query.filter_by(email=request.form['email']).first()
+        if findUser == None:
+            return loginPage()
+        else:
+            return mainPage(findUser.lastName)
+    except:
+        print("Hello ERorr")
+
+
     formLogin = SignInForm()
-    return render_template("login.html",title="login", form=formLogin )
+    return render_template("login.html",title="login", form=formLogin)
 
 @app.route("/signup")
 def signUpPage():
     formSignup = Resgistration()
     return render_template('signup.html', title = "Sign Up | FinSolution", form=formSignup )
 
-@app.route("/directMain",methods=["GET","POST"])
-def verifyAccount():
-    emailed = request.form['email']
-    passworded = request.form['password']
-
-    print()
-    result = db.session.query(User).filter(User.email == emailed)
-
-    print(result)
-    # if emailed == firstUser['email']:
-    #     return mainPage(firstUser['firstName'])
-    # else:
-    #     return loginPage()
-
-    return loginPage()
 
 
 @app.route("/directSigned", methods=["GET","POST"])
@@ -163,7 +157,3 @@ def manageCard():
 
 if __name__ == "__main__":
     app.run(debug=True,port='5000')
-=======
-from flask import Flask
-
->>>>>>> dcdedb30c13cdf04e5a18949728a1e2af61e2809

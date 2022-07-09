@@ -5,17 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PycharmProjects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/.idea/PersonalWebsite-AQuickOne.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/.idea/PersonalWebsite-AQuickOne.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/static/js/aboutReact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/static/js/skilljs.js" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/static/css/Contactme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/templates/Contactme.html" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/templates/Contactme.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/templates/skillPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalWebsite-AQuickOne/templates/skillPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-templating-start/.idea/blog-templating-start.iml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-templating-start/.idea/blog-templating-start.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-templating-start/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-templating-start/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentic File/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Authentic File/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myBusiness/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/myBusiness/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myBusiness/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/myBusiness/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +28,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myBusiness/main.py" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.myBusiness">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python">
       <module name="PycharmProjects" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -46,7 +38,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/venv/bin/Python" />
+      <option name="SDK_HOME" value="C:\Users\tienl\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Authentic File" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -60,6 +52,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="myBusiness" type="PythonConfigurationType" factoryName="Python">
+      <module name="PycharmProjects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\tienl\AppData\Local\Microsoft\WindowsApps\python3.9.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/myBusiness" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myBusiness/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.myBusiness" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,5 +99,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
